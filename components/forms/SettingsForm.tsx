@@ -1,7 +1,7 @@
 "use client";
 
 import * as z from "zod";
-import { store } from "@prisma/client";
+import { Store } from "@prisma/client";
 import { Heading } from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
@@ -26,7 +26,7 @@ import { useOrigin } from "@/hooks/UseOrigin";
 import { toast } from "sonner";
 
 interface SettingsFormProps {
-  initalData: store;
+  initalData: Store;
 }
 
 const formSchema = z.object({

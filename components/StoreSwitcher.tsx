@@ -3,17 +3,32 @@
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useStoreModalStore } from "@/hooks/UseStoreModal";
-import { store } from "@prisma/client";
+import { Store } from "@prisma/client";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check,ChevronsUpDown, PlusCircle, Store as StoreIcon } from "lucide-react";
+import {
+  Check,
+  ChevronsUpDown,
+  PlusCircle,
+  Store as StoreIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
-type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from "@/components/ui/command";
+type PopoverTriggerProps = React.ComponentPropsWithoutRef<
+  typeof PopoverTrigger
+>;
 
-interface StoreSwitcherProps extends PopoverTriggerProps{
-    items: store[];
+interface StoreSwitcherProps extends PopoverTriggerProps {
+  items: Store[];
 };
 
 export default function StoreSwitcher({
