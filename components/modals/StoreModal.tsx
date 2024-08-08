@@ -2,7 +2,7 @@
 import * as z from "zod"
 
 import axios from "axios"
-import { useStoreModalStore } from "@/hooks/use-store-modal";
+import { useStoreModalStore } from "@/hooks/UseStoreModal";
 import { Modal } from "@/components/ui/modal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

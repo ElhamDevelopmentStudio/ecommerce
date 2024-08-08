@@ -2,7 +2,7 @@
 
 
 
-import { useStoreModalStore } from "@/hooks/use-store-modal";
+import { useStoreModalStore } from "@/hooks/UseStoreModal";
 
 import { useEffect } from "react";
 

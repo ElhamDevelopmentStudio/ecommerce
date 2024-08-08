@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs"
 import prismadb from "@/lib/Prismadb";
-import { SettingsForm } from "./Components/settings-form";
+import { SettingsForm } from "../../../../../components/forms/SettingsForm";
 
 interface SettingsPageProps{
     params:{
