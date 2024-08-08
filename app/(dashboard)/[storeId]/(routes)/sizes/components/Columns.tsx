@@ -7,15 +7,16 @@ import CellAction from "./CellAction";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type BillboardColumn = {
+export type SizeColumn = {
   id: string;
-  label: string;
+  name: string;
+  value: string;
   createdAt: string;
 };
 
-export const columns: ColumnDef<BillboardColumn>[] = [
+export const columns: ColumnDef<SizeColumn>[] = [
   {
-    accessorKey: "label",
+    accessorKey: "name",
 
     header: ({ column }) => {
       return (
@@ -23,7 +24,22 @@ export const columns: ColumnDef<BillboardColumn>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Label
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+  },
+  {
+    accessorKey: "value",
+
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Value
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );

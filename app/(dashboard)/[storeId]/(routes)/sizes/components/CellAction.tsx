@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { BillboardColumn } from "./Columns";
+import { SizeColumn } from "./Columns";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +16,7 @@ import axios from "axios";
 import { AlertModal } from "@/components/modals/AlertModal";
 
 type Props = {
-  data: BillboardColumn;
+  data: SizeColumn;
 };
 
 const CellAction = ({ data }: Props) => {
@@ -28,7 +28,7 @@ const CellAction = ({ data }: Props) => {
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
     toast.success("Success", {
-      description: "Billboard ID Copied",
+      description: "Size ID Copied",
       duration: 3000,
     });
   };
@@ -36,16 +36,15 @@ const CellAction = ({ data }: Props) => {
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
-      window.location.assign(`/${params.storeId}/billboards`);
+      await axios.delete(`/api/${params.storeId}/sizes/${data.id}`);
+      window.location.assign(`/${params.storeId}/sizes`);
       toast.success("Success", {
-        description: "Billboard deleted!",
+        description: "Size deleted!",
         duration: 3000,
       });
     } catch (error) {
       toast.error("Failed", {
-        description:
-          "Make sure you remove all categories using this billboard first!",
+        description: "Make sure you remove all products using this size first!",
         duration: 3000,
       });
     } finally {
@@ -81,9 +80,7 @@ const CellAction = ({ data }: Props) => {
           </DropdownMenuItem>
           <DropdownMenuItem
             className="cursor-pointer"
-            onClick={() =>
-              router.push(`/${params.storeId}/billboards/${data.id}`)
-            }
+            onClick={() => router.push(`/${params.storeId}/sizes/${data.id}`)}
           >
             <Edit className="size-4 mr-2" />
             Update
