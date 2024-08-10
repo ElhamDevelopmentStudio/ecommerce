@@ -64,6 +64,7 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initalData }) => {
           `/api/${params.storeId}/sizes/${params.sizeId}`,
           data
         );
+        router.replace(`/${params.storeId}/products`);
       } else {
         await axios.post(`/api/${params.storeId}/sizes`, data);
         router.replace(`/${params.storeId}/sizes`);

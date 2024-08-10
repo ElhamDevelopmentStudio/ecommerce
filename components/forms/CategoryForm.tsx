@@ -76,6 +76,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
           `/api/${params.storeId}/categories/${params.categoryId}`,
           data
         );
+        router.replace(`/${params.storeId}/categories`);
       } else {
         await axios.post(`/api/${params.storeId}/categories`, data);
         router.replace(`/${params.storeId}/categories`);
